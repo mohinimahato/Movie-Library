@@ -56,7 +56,7 @@ const Header: React.FC = () => {
               {activeTab === menu.id && (
                 <motion.span
                   layoutId="bubble"
-                  className="absolute inset-0 z-10 bg-white  mix-blend-difference"
+                  className="absolute inset-0 z-10 bg-white mix-blend-difference"
                   style={{ borderRadius: 9999 }}
                   transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                 />
@@ -86,7 +86,7 @@ const Header: React.FC = () => {
               to={menu.path} 
               key={menu.id} 
               onClick={() => { setActiveTab(menu.id); toggleMenu(); }}
-              className='block text-base text-neutral-300 hover:text-white'
+              className='block text-base text-neutral-300 hover:text-white '
             >
               <motion.div
                 whileHover={{
@@ -99,6 +99,7 @@ const Header: React.FC = () => {
                   textAlign:"center"
                 }}
                 transition={{ duration: 0.125, ease: "easeInOut" }}
+                className='my-1 '
               >
                 {menu.id}
               </motion.div>
@@ -106,23 +107,19 @@ const Header: React.FC = () => {
           ))}
         </div>
       </div>
-      {searchIsOpen && (
-        <div className='fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center z-50'>
-          <div className='relative w-full max-w-md px-4'>
-            <button onClick={toggleSearch} className='absolute top-4 right-4 text-neutral-300 hover:text-white focus:outline-none'>
-              <FontAwesomeIcon icon={faTimes} className='w-6 h-6' />
-            </button>
-            <div className='relative w-full'>
-              <input 
-                type='text' 
-                placeholder='Search...' 
-                className='w-full pl-10 pr-4 py-2 rounded-full bg-gray-700 text-white focus:outline-none focus:bg-gray-600'
-              />
-              <FontAwesomeIcon icon={faSearch} className='absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400' />
-            </div>
-          </div>
+      <div className={`fixed top-0 left-0 right-0 p-4 bg-gray-800 z-50 ${searchIsOpen ? 'flex' : 'hidden'} items-center`}>
+        <button onClick={toggleSearch} className='text-neutral-300 hover:text-white focus:outline-none mr-4'>
+          <FontAwesomeIcon icon={faTimes} className='w-6 h-6' />
+        </button>
+        <div className='relative w-full'>
+          <input 
+            type='text' 
+            placeholder='Search...' 
+            className='w-full pl-10 pr-4 py-2 rounded-full bg-gray-700 text-white focus:outline-none focus:bg-gray-600'
+          />
+          <FontAwesomeIcon icon={faSearch} className='absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400' />
         </div>
-      )}
+      </div>
     </div>
   );
 };
