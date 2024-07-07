@@ -7,8 +7,9 @@ import { motion } from 'framer-motion';
 
 const Header: React.FC = () => {
   const navMenu = [
+    { id: "All Movies", path: "/" },
     { id: "Popular", path: "/movies/popular" },
-    { id: "Top Rated", path: "/movies/top-rated" },
+    { id: "Top Rated", path: "/movies/top_rated" },
     { id: "Upcoming", path: "/movies/upcoming" }
   ];
 
@@ -33,7 +34,7 @@ const Header: React.FC = () => {
           </Link>
         </div>
         <div className='hidden md:flex flex-grow justify-center items-center mx-4'>
-          <div className='relative w-full max-w-md'>
+          <div className='relative w-3/4'>
             <input 
               type='text' 
               placeholder='Search...' 
@@ -42,7 +43,7 @@ const Header: React.FC = () => {
             <FontAwesomeIcon icon={faSearch} className='absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400' />
           </div>
         </div>
-        <div className='hidden md:flex lg:flex w-3/12 justify-between text-base text-neutral-300 font-medium cursor-pointer'>
+        <div className='hidden md:flex lg:flex w-4/12 justify-between text-base text-neutral-300 font-medium cursor-pointer'>
           {navMenu.map((menu) => (
             <Link 
               to={menu.path} 
