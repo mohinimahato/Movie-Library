@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'framer-motion';
+import Search from './Search';
 
 const Header: React.FC = () => {
   const navMenu = [
@@ -35,12 +36,7 @@ const Header: React.FC = () => {
         </div>
         <div className='hidden md:flex flex-grow justify-center items-center mx-4'>
           <div className='relative w-3/4'>
-            <input 
-              type='text' 
-              placeholder='Search...' 
-              className='w-full pl-10 pr-4 py-2 rounded-full bg-gray-700 text-white focus:outline-none focus:bg-gray-600'
-            />
-            <FontAwesomeIcon icon={faSearch} className='absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400' />
+           <Search/>
           </div>
         </div>
         <div className='hidden md:flex lg:flex w-4/12 justify-between text-base text-neutral-300 font-medium cursor-pointer'>
