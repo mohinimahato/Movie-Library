@@ -3,8 +3,8 @@ import Card from "./Card";
 import { useParams } from "react-router-dom";
 
 const MovieList: React.FC = () => {
-    const [movieList, setMovieList] = useState([]);
-    const { type } = useParams();
+    const [movieList, setMovieList] = useState<any[]>([]); // Adjust 'any[]' to match your movie type/interface
+    const { type } = useParams<{ type: string }>(); // Assuming 'type' is a parameter in your route
     const [page, setPage] = useState(1);
     const [loading, setLoading] = useState(false);
 
@@ -23,15 +23,15 @@ const MovieList: React.FC = () => {
             });
     }, [page, type, loading]);
 
-    useEffect(() => {
-        getData();
-    }, [page, type]);
-
     const handleScroll = useCallback(() => {
         if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 500 && !loading) {
             setPage(prevPage => prevPage + 1);
         }
     }, [loading]);
+
+    useEffect(() => {
+        getData();
+    }, [getData]);
 
     useEffect(() => {
         window.addEventListener("scroll", handleScroll);
