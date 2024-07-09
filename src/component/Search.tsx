@@ -81,18 +81,18 @@ const Search: React.FC = () => {
                             value={query}
                             onChange={(e) => setQuery(e.target.value)}
                             placeholder="Search..."
-                            className="w-full pl-4 pr-12 py-2 rounded-full bg-gray-700 text-white focus:outline-none focus:bg-gray-600"
+                            className="w-full pl-4 pr-12 py-2 rounded-full bg-gray-700 text-white focus:outline-none focus:bg-gray-600  shadow-md"
                         />
                         {query && (
                             <FontAwesomeIcon
                                 icon={faTimes}
                                 onClick={clearQuery}
-                                className="absolute right-8 top-1/2 transform -translate-y-1/2 text-gray-400 cursor-pointer hover:text-white"
+                                className="absolute right-12 top-1/2 transform -translate-y-1/2 text-gray-400 cursor-pointer hover:text-white"
                             />
                         )}
                         <button
                             type="submit"
-                            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full hover:bg-gray-600"
+                            className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-r-full shadow-md hover:bg-gray-600"
                         >
                             <FontAwesomeIcon
                                 icon={faSearch}
