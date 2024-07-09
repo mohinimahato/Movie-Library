@@ -31,7 +31,7 @@ const Header: React.FC = () => {
       <div className='w-full py-2 md:py-4 flex justify-between items-center px-4 md:px-8'>
         <div className='flex items-center w-1/4 md:w-1/12'>
           <Link to='/'>
-            <img src={logo} alt="Logo" className='w-12 h-12' />
+            <img src={logo} alt="Logo" className='w-24 h-12' />
           </Link>
         </div>
         <div className='hidden md:flex flex-grow justify-center items-center mx-4'>
